@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">小熊油耗</string>
+
+    <!--燃料类型-->
+    <string-array name="petrol">
+        <item>未指定燃料类型</item>
+        <item>90#无铅汽油</item>
+        <item>92#无铅汽油</item>
+        <item>93#无铅汽油</item>
+        <item>95#无铅汽油</item>
+        <item>97#无铅汽油</item>
+        <item>98#无铅汽油</item>
+        <item>E92#乙醇汽油</item>
+        <item>E93#乙醇汽油</item>
+        <item>E95#乙醇汽油</item>
+        <item>E97#乙醇汽油</item>
+        <item>E98#乙醇汽油</item>
+        <item>0#柴油</item>
+        <item>-10#柴油</item>
+        <item>-20#柴油</item>
+        <item>-35#柴油</item>
+        <item>天然气</item>
+    </string-array>
+
+</resources>
