@@ -65,12 +65,14 @@
         android:layout_height="wrap_content">
 
         <com.example.czy.petrolconsume.tool.LinearChartView
+            android:id="@+id/custom_view"
             android:layout_width="match_parent"
             android:layout_height="340dp"/>
 
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/oil_first_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
