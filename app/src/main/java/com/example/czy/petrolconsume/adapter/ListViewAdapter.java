@@ -78,7 +78,7 @@ public class ListViewAdapter extends BaseAdapter implements OnViewClickListener 
 
     }
 
-    class Holder{
+    private class Holder{
         TextView textView;
         ImageView imageView;
         public Holder(View view){
