@@ -6,7 +6,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by dllo on 17/4/24.
+ * Created by CZY on 17/4/24.
  */
 
 public class HttpManager {

@@ -11,7 +11,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.czy.petrolconsume.adapter.AddSpinnerAdapter;
+import com.example.czy.petrolconsume.adapter.AddCarSpinnerAdapter;
 import com.example.czy.petrolconsume.R;
 import com.example.czy.petrolconsume.base.BaseActivity;
 import com.example.czy.petrolconsume.bean.BrandBean;
@@ -45,7 +45,7 @@ public class AddCarActivity extends BaseActivity {
     private String name1;
     private String name2;
     private String name3;
-    private AddSpinnerAdapter addSpinnerAdapter;
+    private AddCarSpinnerAdapter addCarSpinnerAdapter;
 
     @Override
     protected int bindLayout() {
@@ -66,8 +66,8 @@ public class AddCarActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        addSpinnerAdapter = new AddSpinnerAdapter(AddCarActivity.this);
-        brandsSpinner.setAdapter(addSpinnerAdapter);
+        addCarSpinnerAdapter = new AddCarSpinnerAdapter(AddCarActivity.this);
+        brandsSpinner.setAdapter(addCarSpinnerAdapter);
 
         relativeLayout.setVisibility(View.GONE);
 
@@ -167,7 +167,7 @@ public class AddCarActivity extends BaseActivity {
                 .subscribe(new Consumer<BrandBean>() {
                     @Override
                     public void accept(@NonNull BrandBean brandBean) throws Exception {
-                        addSpinnerAdapter.setData(brandBean);
+                        addCarSpinnerAdapter.setData(brandBean);
                     }
                 });
     }
@@ -180,9 +180,9 @@ public class AddCarActivity extends BaseActivity {
                 .subscribe(new Consumer<BrandBean>() {
                     @Override
                     public void accept(@NonNull BrandBean brandBean) throws Exception {
-                        AddSpinnerAdapter addSpinnerAdapter = new AddSpinnerAdapter(AddCarActivity.this);
-                        addSpinnerAdapter.setData(brandBean);
-                        seriesSpinner.setAdapter(addSpinnerAdapter);
+                        AddCarSpinnerAdapter addCarSpinnerAdapter = new AddCarSpinnerAdapter(AddCarActivity.this);
+                        addCarSpinnerAdapter.setData(brandBean);
+                        seriesSpinner.setAdapter(addCarSpinnerAdapter);
                     }
                 });
     }
@@ -195,9 +195,9 @@ public class AddCarActivity extends BaseActivity {
                 .subscribe(new Consumer<BrandBean>() {
                     @Override
                     public void accept(@NonNull BrandBean brandBean) throws Exception {
-                        AddSpinnerAdapter addSpinnerAdapter = new AddSpinnerAdapter(AddCarActivity.this);
-                        addSpinnerAdapter.setData(brandBean);
-                        typeSpinner.setAdapter(addSpinnerAdapter);
+                        AddCarSpinnerAdapter addCarSpinnerAdapter = new AddCarSpinnerAdapter(AddCarActivity.this);
+                        addCarSpinnerAdapter.setData(brandBean);
+                        typeSpinner.setAdapter(addCarSpinnerAdapter);
                     }
                 });
     }

@@ -1,4 +1,4 @@
-package com.example.czy.petrolconsume.tool;
+package com.example.czy.petrolconsume.customview;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by dllo on 17/4/19.
+ * Created by CZY on 17/4/19.
  */
 
 public class LinearChartView extends View {
@@ -58,6 +58,12 @@ public class LinearChartView extends View {
         points = new ArrayList<>();
     }
 
+    /**
+     * 测量
+     *
+     * @param widthMeasureSpec
+     * @param heightMeasureSpec
+     */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -65,6 +71,11 @@ public class LinearChartView extends View {
         height = MeasureSpec.getSize(heightMeasureSpec);
     }
 
+    /**
+     * 绘制
+     *
+     * @param canvas
+     */
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -76,6 +87,11 @@ public class LinearChartView extends View {
         drawLine(canvas);
     }
 
+    /**
+     * 绘制X轴
+     *
+     * @param canvas
+     */
     private void drawAxisX(Canvas canvas) {
         float startX = PADDING_WIDTH;
         float startY = height - PADDING_HEIGHT;
@@ -95,6 +111,11 @@ public class LinearChartView extends View {
         postInvalidate();
     }
 
+    /**
+     * 绘制Y轴
+     *
+     * @param canvas
+     */
     private void drawAxisY(Canvas canvas) {
         float startX = PADDING_WIDTH;
         float startY = PADDING_HEIGHT;
@@ -114,6 +135,11 @@ public class LinearChartView extends View {
         postInvalidate();
     }
 
+    /**
+     * 绘制X轴刻度
+     *
+     * @param canvas
+     */
     private void drawMarkX(Canvas canvas) {
         float length = (width - PADDING_WIDTH * 2) / (COUNT_X_MARK);
         for (int i = 0; i < COUNT_X_MARK; i++) {
@@ -137,6 +163,10 @@ public class LinearChartView extends View {
         postInvalidate();
     }
 
+    /**
+     * 绘制Y轴刻度
+     * @param canvas
+     */
     private void drawMarkY(Canvas canvas) {
         float length = (height - PADDING_WIDTH * 2) / (COUNT_Y_MARK);
         for (int i = 0; i < COUNT_Y_MARK; i++) {
@@ -159,6 +189,10 @@ public class LinearChartView extends View {
         postInvalidate();
     }
 
+    /**
+     * 绘制直线
+     * @param canvas
+     */
     private void drawLine(Canvas canvas) {
         Point lastPoint = null;
         for (int i = 0; i < points.size(); i++) {
@@ -171,6 +205,10 @@ public class LinearChartView extends View {
         points.clear();
     }
 
+    /**
+     * 绘制点
+     * @param canvas
+     */
     private void drawPoint(Canvas canvas) {
         float length = (width - PADDING_WIDTH * 2) / COUNT_X_MARK;
         float heightY = height - PADDING_HEIGHT * 2;

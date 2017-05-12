@@ -1,4 +1,4 @@
-package com.example.czy.petrolconsume.tool;
+package com.example.czy.petrolconsume.customview;
 
 import android.content.Context;
 import android.content.res.TypedArray;

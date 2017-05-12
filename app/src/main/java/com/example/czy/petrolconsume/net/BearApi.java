@@ -9,7 +9,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
- * Created by dllo on 17/4/24.
+ * Created by CZY on 17/4/24.
  */
 
 public interface BearApi {

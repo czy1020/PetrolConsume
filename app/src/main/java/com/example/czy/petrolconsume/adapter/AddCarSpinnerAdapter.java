@@ -10,37 +10,48 @@ import android.widget.TextView;
 
 import com.example.czy.petrolconsume.bean.BrandBean;
 
+import java.util.List;
+
 /**
- * Created by dllo on 17/4/24.
+ * Created by CZY on 17/4/24.
  */
 
-public class AddSpinnerAdapter extends BaseAdapter {
+public class AddCarSpinnerAdapter extends BaseAdapter {
 
     private BrandBean data;
+    private List<Integer> idxes;
+    private List<String> names;
     private Context context;
 
-    public AddSpinnerAdapter(Context context) {
+    public AddCarSpinnerAdapter(Context context) {
         this.context = context;
     }
 
-    public void setData(BrandBean brandEntity) {
-        this.data = brandEntity;
+    public void setData(BrandBean data) {
+        idxes = data.getIdxes();
+        names = data.getNames();
         notifyDataSetChanged();
     }
 
     @Override
     public int getCount() {
-        return data == null ? 0 : data.getNames().size();
+        int count = 0;
+        try {
+            count = idxes.size();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return count;
     }
 
     @Override
     public Object getItem(int position) {
-        return data.getNames().get(position);
+        return names.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return data.getIdxes().get(position);
+        return idxes.get(position);
     }
 
     @Override
@@ -49,7 +60,7 @@ public class AddSpinnerAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(android.R.layout.simple_spinner_item, parent, false);
         }
         TextView textView = (TextView) convertView;
-        textView.setText(data.getNames().get(position));
+        textView.setText(names.get(position));
         return convertView;
     }
 
@@ -57,7 +68,7 @@ public class AddSpinnerAdapter extends BaseAdapter {
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(context).inflate(android.R.layout.simple_spinner_dropdown_item, parent, false);
         CheckedTextView textView = (CheckedTextView) convertView;
-        textView.setText(data.getNames().get(position));
+        textView.setText(names.get(position));
         return convertView;
     }
 }

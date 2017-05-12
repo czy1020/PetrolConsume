@@ -10,7 +10,7 @@ import com.example.czy.petrolconsume.R;
 import com.example.czy.petrolconsume.base.BaseFragment;
 import com.example.czy.petrolconsume.bean.RecordBean;
 import com.example.czy.petrolconsume.database.RxSQLite;
-import com.example.czy.petrolconsume.tool.LinearChartView;
+import com.example.czy.petrolconsume.customview.LinearChartView;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;

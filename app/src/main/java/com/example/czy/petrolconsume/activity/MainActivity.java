@@ -22,14 +22,14 @@ import android.widget.Toast;
 import com.example.czy.petrolconsume.fragment.RankFragment;
 import com.example.czy.petrolconsume.tool.OnViewClickListener;
 import com.example.czy.petrolconsume.R;
-import com.example.czy.petrolconsume.adapter.ListAdapter;
+import com.example.czy.petrolconsume.adapter.ListViewAdapter;
 import com.example.czy.petrolconsume.adapter.MainViewPagerAdapter;
 import com.example.czy.petrolconsume.adapter.SpinnerAdapter;
 import com.example.czy.petrolconsume.bean.CarBean;
 import com.example.czy.petrolconsume.database.DBToolSingleton;
 import com.example.czy.petrolconsume.database.RxSQLite;
 import com.example.czy.petrolconsume.fragment.OilConsumeFragment;
-import com.example.czy.petrolconsume.tool.SlidingMenu;
+import com.example.czy.petrolconsume.customview.SlidingMenu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CarBean myCar;
     private List<CarBean> cars;
     private int newPosition;
-    private ListAdapter listAdapter;
+    private ListViewAdapter listAdapter;
     private ListView listView;
     private SpinnerAdapter spinnerAdapter;
     private SlidingMenu slidingMenu;
@@ -91,7 +91,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         queryCar();
 
-        listAdapter = new ListAdapter(MainActivity.this);
+        listAdapter = new ListViewAdapter(MainActivity.this);
+        final AlertDialog dialog = new AlertDialog.Builder(MainActivity.this).create();
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -99,7 +100,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if (position == spinner.getCount() - 1) {
 
-                    final AlertDialog dialog = new AlertDialog.Builder(MainActivity.this).create();
                     view = LayoutInflater.from(MainActivity.this).inflate(R.layout.dialog_view, null);
                     dialog.setView(view);
 
@@ -281,6 +281,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case DialogInterface.BUTTON_NEGATIVE:
                         int newId = cars.get(newPosition).getId();
                         DBToolSingleton.getInstance().removeCar(newId);
+                        queryCar();
+                        query();
                         Toast.makeText(MainActivity.this, "删除:" + String.valueOf(newPosition), Toast.LENGTH_SHORT).show();
                         break;
 

@@ -15,10 +15,10 @@ import com.example.czy.petrolconsume.bean.CarBean;
 import java.util.List;
 
 /**
- * Created by dllo on 17/4/19.
+ * Created by CZY on 17/4/19.
  */
 
-public class ListAdapter extends BaseAdapter implements OnViewClickListener {
+public class ListViewAdapter extends BaseAdapter implements OnViewClickListener {
     private List<CarBean> cars;
     private Context context;
     private OnViewClickListener onViewClickListener;
@@ -27,7 +27,7 @@ public class ListAdapter extends BaseAdapter implements OnViewClickListener {
         this.onViewClickListener = onViewClickListener;
     }
 
-    public ListAdapter(Context context) {
+    public ListViewAdapter(Context context) {
         this.context = context;
     }
 

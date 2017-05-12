@@ -64,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.example.czy.petrolconsume.tool.LinearChartView
+        <com.example.czy.petrolconsume.customview.LinearChartView
             android:id="@+id/custom_view"
             android:layout_width="match_parent"
             android:layout_height="340dp"/>
@@ -92,7 +92,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="    "/>
+            android:text="15"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -108,7 +108,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   "/>
+            android:text="200"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -129,7 +129,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="    "/>
+            android:text="60"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -145,7 +145,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   "/>
+            android:text="230"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -166,7 +166,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="    "/>
+            android:text="10"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -182,7 +182,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   "/>
+            android:text="160"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -203,7 +203,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="    "/>
+            android:text="13"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -219,7 +219,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   "/>
+            android:text="30"/>
 
         <TextView
             android:layout_width="wrap_content"
